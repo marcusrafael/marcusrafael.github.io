@@ -1,26 +1,26 @@
 # Dependencies
 markdown:         redcarpet
 highlighter:      pygments
+plugins:          ["jekyll-paginate", "redcarpet", "jekyll-gist", "pygments.rb"]
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          /
+title:            Xavier
+tagline:          'Cloud'
+description:      '<a href="https://github.com/marcusrafael" target="_blank">@marcusrafael</a>'
+url:              https://marcusrafael.github.io
+baseurl:          https://marcusrafael.github.io/marcusrafael.github.io/
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Xavier'
+  url:            https://marcusrafael.github.io
 
 paginate:         5
 
 # Custom vars
-version:          2.1.0
+version:          1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/marcusrafael/marcusrafael.github.io
