@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10131a" />
+    <meta
+      name="description"
+      content="Site pessoal de Marcus Rafael — pesquisador e profissional de tecnologia."
+    />
+    <title>Marcus Rafael — Tecnologia, pesquisa e engenharia</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #10131a;
+        --panel: #171c26;
+        --text: #f2f4f8;
+        --muted: #aab3c2;
+        --accent: #8bf0c8;
+        --line: rgba(255, 255, 255, 0.12);
+        --max: 1080px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(
+            ellipse at 85% 5%,
+            rgba(139, 240, 200, 0.09),
+            transparent 32rem
+          ),
+          var(--bg);
+        color: var(--text);
+        font:
+          16px/1.65 Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        width: min(var(--max), calc(100% - 40px));
+        margin-inline: auto;
+      }
+      header {
+        border-bottom: 1px solid var(--line);
+      }
+      nav {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        font-weight: 750;
+        letter-spacing: -0.04em;
+        text-decoration: none;
+      }
+      .brand span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+      .nav-links a {
+        color: var(--muted);
+        font-size: 0.93rem;
+        text-decoration: none;
+      }
+      .nav-links a:hover,
+      .text-link:hover {
+        color: var(--accent);
+      }
+      .hero {
+        padding: clamp(76px, 12vw, 142px) 0 100px;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: currentColor;
+      }
+      h1 {
+        max-width: 850px;
+        margin: 20px 0;
+        font-size: clamp(2.7rem, 8vw, 5.8rem);
+        line-height: 0.99;
+        letter-spacing: -0.065em;
+      }
+      h1 em {
+        color: var(--accent);
+        font-style: normal;
+      }
+      .intro {
+        max-width: 660px;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 19px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        text-decoration: none;
+        font-weight: 650;
+        transition:
+          transform 0.18s ease,
+          border-color 0.18s ease;
+      }
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+      }
+      .button.primary {
+        background: var(--accent);
+        color: #101a18;
+        border-color: var(--accent);
+      }
+      section {
+        padding: 74px 0;
+        border-top: 1px solid var(--line);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 30px;
+        margin-bottom: 34px;
+      }
+      .section-label {
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      h2 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+        letter-spacing: -0.045em;
+        line-height: 1.15;
+      }
+      .about-copy {
+        max-width: 730px;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .card {
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+      .card .num {
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 750;
+      }
+      .card h3 {
+        margin: 14px 0 8px;
+        font-size: 1.15rem;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .project-list {
+        display: grid;
+        gap: 12px;
+      }
+      .project {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: center;
+        padding: 22px 24px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .project h3 {
+        margin: 0 0 5px;
+        font-size: 1.08rem;
+      }
+      .project p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+      .arrow {
+        color: var(--accent);
+        font-size: 1.3rem;
+      }
+      .contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        padding: 32px;
+        border-radius: 14px;
+        border: 1px solid rgba(139, 240, 200, 0.28);
+        background: rgba(139, 240, 200, 0.045);
+      }
+      .contact p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+      footer {
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: 0.87rem;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .text-link {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 760px) {
+        .nav-links {
+          gap: 13px;
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .contact {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 480px) {
+        .wrap {
+          width: min(var(--max), calc(100% - 28px));
+        }
+        nav {
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          padding: 18px 0;
+        }
+        .nav-links {
+          font-size: 0.85rem;
+        }
+        .project {
+          padding: 18px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="wrap" aria-label="Navegação principal">
+        <a class="brand" href="#inicio">marcusrafael<span>.</span></a>
+        <div class="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#atuacao">Atuação</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero wrap" id="inicio" style="border-top: 0">
+        <div class="eyebrow">Tecnologia · Pesquisa · Engenharia</div>
+        <h1>Transformando problemas complexos em <em>soluções simples.</em></h1>
+        <p class="intro">
+          Sou Marcus Rafael, pesquisador em Ciência da Computação e profissional
+          de tecnologia. Tenho interesse em engenharia de software, plataformas
+          confiáveis, automação e inteligência artificial.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#projetos"
+            >Conheça meu trabalho <span aria-hidden="true">&nbsp;↗</span></a
+          >
+          <a class="button" href="#contato">Entre em contato</a>
+        </div>
+      </section>
+
+      <section id="sobre">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="section-label">01 / Sobre</div>
+            <h2>Curiosidade científica.<br />Prática de engenharia.</h2>
+          </div>
+          <p class="about-copy">
+            Minha atuação combina pesquisa acadêmica e experiência prática com
+            sistemas de software. Gosto de investigar como sistemas podem se
+            tornar mais confiáveis, eficientes e autônomos — usando
+            experimentação, dados e boas práticas de engenharia.
+          </p>
+        </div>
+      </section>
+
+      <section id="atuacao">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="section-label">02 / Atuação</div>
+            <h2>Temas com os quais trabalho.</h2>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="num">01</div>
+              <h3>Engenharia de plataforma</h3>
+              <p>
+                Automação de infraestrutura, contêineres, Kubernetes e
+                ferramentas para operar sistemas com consistência.
+              </p>
+            </article>
+            <article class="card">
+              <div class="num">02</div>
+              <h3>Confiabilidade de sistemas</h3>
+              <p>
+                Observabilidade, métricas, desempenho e práticas de SRE para
+                tornar serviços mais resilientes.
+              </p>
+            </article>
+            <article class="card">
+              <div class="num">03</div>
+              <h3>Pesquisa e IA</h3>
+              <p>
+                Aprendizado por reforço, experimentação e aplicação de métodos
+                inteligentes à gestão de sistemas.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="section-label">03 / Projetos</div>
+            <h2>Pesquisa que encontra a prática.</h2>
+          </div>
+          <div class="project-list">
+            <article class="project">
+              <div>
+                <h3>Crane — Orquestração inteligente</h3>
+                <p>
+                  Pesquisa sobre agentes inteligentes para apoiar decisões de
+                  alocação e escalabilidade de contêineres.
+                </p>
+              </div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project">
+              <div>
+                <h3>Automação de infraestrutura</h3>
+                <p>
+                  Ambientes reproduzíveis para implantação, execução de
+                  experimentos e avaliação de sistemas.
+                </p>
+              </div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project">
+              <div>
+                <h3>Ensino e compartilhamento</h3>
+                <p>
+                  Exemplos práticos e materiais para aproximar desenvolvimento
+                  de software e fundamentos de computação.
+                </p>
+              </div>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </article>
+          </div>
+          <p style="color: var(--muted); font-size: 0.88rem; margin-top: 14px">
+            Os projetos podem receber links para repositórios, artigos e
+            demonstrações.
+          </p>
+        </div>
+      </section>
+
+      <section id="contato">
+        <div class="wrap">
+          <div class="contact">
+            <div>
+              <div class="section-label">04 / Contato</div>
+              <h2 style="margin-top: 10px">Vamos conversar?</h2>
+              <p>
+                Para trocar ideias, falar sobre pesquisa ou discutir
+                oportunidades.
+              </p>
+            </div>
+            <!-- Substitua o e-mail abaixo pelo seu endereço de contato. -->
+            <a class="button primary" href="mailto:SEU-EMAIL@gmail.com"
+              >Enviar e-mail ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <span>© <span id="year"></span> Marcus Rafael</span>
+        <span>Feito com simplicidade e propósito.</span>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
